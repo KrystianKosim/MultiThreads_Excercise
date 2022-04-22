@@ -1,5 +1,8 @@
 package com.company;
 
+/**
+ * Klasa player reprezentuje gracza w grze, posiada on pole sumOfPlayer, czyli sume punktow danego gracza
+ */
 public class Player extends Thread {
 
     private int sumOfPlayer;
@@ -12,18 +15,24 @@ public class Player extends Thread {
         return sumOfPlayer;
     }
 
+    /**
+     * Metoda ktora rozpoczyna watek gracza, podczas trwania watku "usypia" danego gracza, jest to symulacja zastanawiania sie,
+     * watek trwa do momentu zakonczenia gry przez sedziego(Referee)
+     */
     @Override
     public void run() {
-        int var;
+        int randomPoints;
         while (true) {
             try {
                 sleep((int) (Math.random() * 1000));
             } catch (InterruptedException e) {
                 return;
             }
-            var = (int) (Math.random() * (100 - 1) + 1);
-            sumOfPlayer += var;
-            System.out.println(getName() + ": " + var);
+            int maxValueOfPoints = 100;
+            int minValueOfPoints = 1;
+            randomPoints = (int) (Math.random() * (maxValueOfPoints - minValueOfPoints) + minValueOfPoints);
+            sumOfPlayer += randomPoints;
+            System.out.println(getName() + ": " + randomPoints);
         }
 
     }

@@ -3,17 +3,25 @@ package com.company;
 public class TestGame {
 
     public static void main(String[] args) {
-        Player p1 = new Player("Player1");                                            // tworzenie gracza ze swoim identyfikatorem
+        /**
+         * Utworzenie graczy, ktorzy biora udzial w grze
+         */
+        Player p1 = new Player("Player1");
         Player p2 = new Player("Player2");
 
-        Referee ref = new Referee(10, new Player[]{p1, p2});       //  arbiter ustala czas gry (w sekundach), "rejestruje" tablicę graczy
+        /**
+         * Utworzenie arbitra oraz ustawienie czasu trwania gry
+         */
+        Referee ref = new Referee(10, new Player[]{p1, p2});
 
-        ref.startGame();                                                                   // arbiter startuje swój wątek: mierzy czas oraz daje sygnał startu graczom
+        /**
+         * Arbiter rozpoczyna gre
+         */
+        ref.startGame();
 
         try {
-            ref.join();                                                                          // czekamy, aż wątek arbitra zakończy swoją pracę, tzn. po upływie określonego czasu przerywa pracę wątków wszystkich graczy
 
-            // join() jest metodą z klasy Thread
+            ref.join();
 
         } catch (InterruptedException exc) {
 
@@ -21,7 +29,10 @@ public class TestGame {
 
         }
 
-        ref.result();                                                                            // arbiter ogłasza wynik gry
+        /**
+         * Wyswietlenie wynikow
+         */
+        ref.result();
 
     }
 }
