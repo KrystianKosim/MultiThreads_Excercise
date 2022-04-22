@@ -1,4 +1,4 @@
-package com.company;
+package MultiThreadsGame;
 
 /**
  * Klasa Referee reprezentuje sedziego. Klasa ma pole players ktore przechowuje graczy w tablicy, oraz time czyli czas jaki trwa gra

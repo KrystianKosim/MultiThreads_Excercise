@@ -1,4 +1,4 @@
-package com.company;
+package MultiThreadsGame;
 
 /**
  * Klasa player reprezentuje gracza w grze, posiada on pole sumOfPlayer, czyli sume punktow danego gracza

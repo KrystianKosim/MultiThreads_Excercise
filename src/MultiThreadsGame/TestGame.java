@@ -1,4 +1,4 @@
-package com.company;
+package MultiThreadsGame;
 
 public class TestGame {
 
