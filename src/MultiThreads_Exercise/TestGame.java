@@ -1,4 +1,4 @@
-package MultiThreadsGame;
+package MultiThreads_Exercise;
 
 public class TestGame {
 
